@@ -1,0 +1,48 @@
+package com.belajar;
+
+
+import java.util.Scanner;
+
+public class Main {
+    static int jumlahspl;
+    static int jumlahvar;
+    static double[][] spl;
+
+
+    public static void main(String[] args) {
+        bacamatriks();
+        tulismatriks();
+    }
+    public static void bacamatriks () {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("masukkan jumlah baris m:");
+        int m = scanner.nextInt();
+        Main.jumlahspl = m;
+        System.out.print("masukkan jumlah baris n:");
+        int n = scanner.nextInt();
+        Main.jumlahvar = n;
+        double[][] matriks = new double[m][n+1];
+        for (int i=0; i<m; i++) {
+            for (int j=0; j<n; j++) {
+                System.out.print("matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
+                matriks[i][j]=scanner.nextDouble();
+            }
+            System.out.print("jawaban spl " + (i+1) + " : ");
+            matriks[i][n]=scanner.nextDouble();
+        }
+        Main.spl = matriks;
+
+    }
+    public static void tulismatriks() {
+        int m = Main.jumlahspl;
+        int n = Main.jumlahvar;
+        double[][] matriks = Main.spl;
+        for (int i=0; i<m; i++) {
+            for (int j=0; j<n; j++) {
+                System.out.print(matriks[i][j]+" ");
+            }
+            System.out.print(matriks[i][n]);
+            System.out.println("");
+        }
+    }
+}
