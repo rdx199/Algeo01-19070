@@ -13,21 +13,22 @@ public class Main {
         bacamatriks();
         tulismatriks();
     }
+    // void melakukan input kedalam variable spl
     public static void bacamatriks () {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("masukkan jumlah baris m:");
+        System.out.print("Masukkan jumlah baris (m): ");
         int m = scanner.nextInt();
         Main.jumlahspl = m;
-        System.out.print("masukkan jumlah baris n:");
+        System.out.print("Masukkan jumlah kolom (n): ");
         int n = scanner.nextInt();
         Main.jumlahvar = n;
         double[][] matriks = new double[m][n+1];
         for (int i=0; i<m; i++) {
             for (int j=0; j<n; j++) {
-                System.out.print("matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
+                System.out.print("Masukkan matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
                 matriks[i][j]=scanner.nextDouble();
             }
-            System.out.print("jawaban spl " + (i+1) + " : ");
+            System.out.print("Masukkan solusi SPL-" + (i+1) + " : ");
             matriks[i][n]=scanner.nextDouble();
         }
         Main.spl = matriks;
