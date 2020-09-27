@@ -1,0 +1,91 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int brs = insertbrs();
+        int kol = insertkol();
+
+        double[][] matriks = new double[brs][kol];
+
+        bacaValue(matriks, brs, kol);
+        printMatriks(matriks, brs, kol);
+        System.out.println(ekspansiKofaktor(matriks));
+    }
+
+    public static int insertbrs() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah baris (m): ");
+        return scanner.nextInt();
+    }
+
+    public static int insertkol() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah kolom (n): ");
+        return scanner.nextInt();
+    }
+
+    public static double[][] bacaValue (double[][] matriks, int brs, int kol) {
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i=0; i<brs; i++) {
+            for (int j=0; j<kol; j++) {
+                System.out.print("Masukkan matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
+                matriks[i][j]=scanner.nextDouble();
+            }
+        }
+
+        return matriks;
+    }
+    public static double ekspansiKofaktor(double[][] matriks) {
+        int i,j;
+        int brs = matriks.length ; int kol = matriks[0].length;
+        double[][] MatriksRec = new double[brs-1][kol-1];
+        for (i =0; i < brs-1; i++) {
+            for (j = 0; j < kol-1;j++) {
+                MatriksRec[i][j] = matriks[i][j];
+            }
+        }
+        double determinan;
+        if (brs == 1) {return matriks[0][0];}
+        else {
+            int k, count;
+            double detRec;
+            determinan = 0;
+            
+            for (i = 0; i < brs;i++) {
+                for (j = 0;j< kol -1;j++) {
+                    count = 0;
+                    for (k=0;k<brs;k++) {
+                        if (k!=i) {
+                            MatriksRec[j][count] = matriks[j+1][k];
+                            count += 1;
+                        }
+                    }
+                }
+                detRec = matriks[0][i] * ekspansiKofaktor(MatriksRec);
+                determinan += pangkat(-1,i) * detRec;
+            }
+        }
+        return determinan;
+    }
+    public static double pangkat(double x,int exp) {
+        double basis = x;
+        for (int i = 0; i < exp; i++) {
+            basis = basis*basis;
+        }
+        return basis;
+    }
+    public static void printMatriks(double[][] matriks, int brs, int kol) {
+        for (int i=0; i<brs; i++) {
+            for (int j=0; j<kol; j++) {
+                System.out.print(matriks[i][j]+" ");
+            }
+            System.out.println("");
+        }
+    }
+}
