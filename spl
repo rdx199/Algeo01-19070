@@ -96,32 +96,49 @@ public class Main {
         }
     }
 
-    public static void gantikolom(double[][] matriks, int jumlahSPL, int jumlahVar, int j) {
-        for (int i = 0; i < jumlahSPL; i++) {
-            matriks[i][j] = matriks[i][jumlahVar];
+    public static void gantikolom(double[][] M,int kolom) {
+        for (int i = 0; i < M.length; i++) {
+            M[i][kolom] = M[i][M[0].length - 1];
         }
     }
 
-    public static void copy(double[][] newmatriks, double[][] oldmatriks, int jumlahSPL, int jumlahVar) {
-        for (int i = 0; i < jumlahSPL; i++) {
-            for (int j = 0; j < jumlahVar + 1; j++) {
-                newmatriks[i][j] = oldmatriks[i][j];
+    public static void copy(double[][] m2, double[][] oldmatriks) {
+        // m2 : dengan hasil , m3 : matriks persegi
+        for (int i = 0; i < oldmatriks.length; i++) {
+            for (int j = 0; j < oldmatriks[0].length; j++) {
+                m2[i][j] = oldmatriks[i][j];
             }
         }
     }
 
-    public static void crammer(double[][] matriks, int jumlahSPL, int jumlahVar) {
-        double[][] matriksganti = new double[jumlahSPL][jumlahVar + 1];
-        copy(matriksganti, matriks, jumlahSPL, jumlahVar);
-        if (jumlahSPL != jumlahVar) {
+    public static void cramer (double[][] M) {
+        double[][] m2 = new double[M.length][M[0].length];
+        copy(m2,M);
+        double[][] m3 = new double[M.length][M[0].length - 1];
+
+        // copy m2 ke m3, tapi tidak termasuk hasil spl
+        for (int i = 0; i < m3.length; i++) {
+            for (int j = 0; j < m3[0].length; j++) {
+                m3[i][j] = m2[i][j];
+            }
+        }
+        if (M.length != M[0].length - 1) {
             System.out.println("tidak ada determinan dikarenakan matriks bukan persegi");
         } else {
-            double det = Coba.ekspansiKofaktor(matriks);
-            for (int j = 0; j < jumlahVar; j++) {
-                gantikolom(matriksganti, jumlahSPL, jumlahVar, j);
-                double detx = Coba.ekspansiKofaktor(matriksganti);
+            double det = Determinan.ekspansiKofaktor(m3);
+
+            for (int j = 0; j < M[0].length - 1; j++) {
+                gantikolom(m2,j);
+                // copy m2 ke m3, tapi tidak termasuk hasil spl
+                for (int k = 0; k < m3.length; k++) {
+                    for (int l = 0; l < m3[0].length; l++) {
+                        m3[k][l] = m2[k][l];
+                    }
+                }
+                double detx = Determinan.ekspansiKofaktor(m3);
                 System.out.println("x" + (j + 1) + " = " + (detx / det));
-                copy(matriksganti, matriks, jumlahSPL, jumlahVar);
+                copy(m2,M);
+
             }
         }
     }
