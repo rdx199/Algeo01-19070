@@ -16,27 +16,32 @@ public class Main {
         bacaValue(matriks, brs, kol);
 
         // loop menu
-        while (true) {
-            System.out.println("\nMatriks " + brs + " x " + kol);
-            printMatriks(matriks, brs, kol);
-            System.out.println("\nMENU DETERMINAN:\n" +
-                    "1. Metode Ekspansi Kofaktor\n" +
-                    "2. Metode Reduksi Baris\n" +
-                    "0. BACK\n");
+        if (brs != kol) {
+            System.out.print("Tidak ada determinan karena bukan matriks persegi\n\nPress ENTER to go back...");
+            scanner.nextLine();
+        } else {
+            while (true) {
+                System.out.println("\nMatriks " + brs + " x " + kol);
+                printMatriks(matriks, brs, kol);
+                System.out.println("\nMENU DETERMINAN:\n" +
+                        "1. Metode Ekspansi Kofaktor\n" +
+                        "2. Metode Reduksi Baris\n" +
+                        "0. BACK\n");
 
-            int pilihan = menu();
-            if (pilihan == 0) {
-                break;
-            } else if (pilihan == 1) {
-                System.out.println("Dengan menggunakan metode Ekspansi Kofaktor,\ndidapat nilai determinan = " + ekspansiKofaktor(matriks));
-                System.out.print("\nPress ENTER to go back...");
-                scanner.nextLine();
-            } else if (pilihan == 2) {
-                System.out.println("Dengan menggunakan metode Reduksi Baris,\ndidapat nilai determinan = " + reduksiBaris(matriks));
-                System.out.print("\nPress ENTER to go back...");
-                scanner.nextLine();
-            } else {
-                System.out.println("Masukkan salah, silahkan coba lagi!");
+                int pilihan = menu();
+                if (pilihan == 0) {
+                    break;
+                } else if (pilihan == 1) {
+                    System.out.println("Dengan menggunakan metode Ekspansi Kofaktor,\ndidapat nilai determinan = " + ekspansiKofaktor(matriks));
+                    System.out.print("\nPress ENTER to go back...");
+                    scanner.nextLine();
+                } else if (pilihan == 2) {
+                    System.out.println("Dengan menggunakan metode Reduksi Baris,\ndidapat nilai determinan = " + reduksiBaris(matriks));
+                    System.out.print("\nPress ENTER to go back...");
+                    scanner.nextLine();
+                } else {
+                    System.out.println("Masukkan salah, silahkan coba lagi!");
+                }
             }
         }
 
@@ -119,7 +124,7 @@ public class Main {
 
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++) {
-                if (j > i) {
+                if (j > i && segitigaatas[i][i] != 0) {
                     rasio = segitigaatas[j][i] / segitigaatas[i][i];
                     for (k = 0; k < n; k++) {
                         segitigaatas[j][k] -= rasio * segitigaatas[i][k];
