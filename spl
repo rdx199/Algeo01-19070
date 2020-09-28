@@ -46,4 +46,27 @@ public class Main {
             System.out.println("");
         }
     }
+    public static void copy(double[][] newmatriks, double[][] oldmatriks, int jumlahSPL, int jumlahVar) {
+        for (int i = 0; i < jumlahSPL; i++) {
+            for (int j = 0; j < jumlahVar + 1; j++) {
+                newmatriks[i][j] = oldmatriks[i][j];
+            }
+        }
+    }
+
+    public static void crammer(double[][] matriks, int jumlahSPL, int jumlahVar) {
+        double[][] matriksganti = new double[jumlahSPL][jumlahVar + 1];
+        copy(matriksganti, matriks, jumlahSPL, jumlahVar);
+        if (jumlahSPL != jumlahVar) {
+            System.out.println("tidak ada determinan dikarenakan matriks bukan persegi");
+        } else {
+            double det = Coba.ekspansiKofaktor(matriks);
+            for (int j = 0; j < jumlahVar; j++) {
+                gantikolom(matriksganti, jumlahSPL, jumlahVar, j);
+                double detx = Coba.ekspansiKofaktor(matriksganti);
+                System.out.println("x" + (j + 1) + " = " + (detx / det));
+                copy(matriksganti, matriks, jumlahSPL, jumlahVar);
+            }
+        }
+    }
 }
