@@ -4,48 +4,104 @@ package com.belajar;
 import java.util.Scanner;
 
 public class Main {
-    static int jumlahspl;
-    static int jumlahvar;
-    static double[][] spl;
-
 
     public static void main(String[] args) {
-        bacamatriks();
-        tulismatriks();
-    }
-    // void melakukan input kedalam variable spl
-    public static void bacamatriks () {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Masukkan jumlah baris (m): ");
-        int m = scanner.nextInt();
-        Main.jumlahspl = m;
-        System.out.print("Masukkan jumlah kolom (n): ");
-        int n = scanner.nextInt();
-        Main.jumlahvar = n;
-        double[][] matriks = new double[m][n+1];
-        for (int i=0; i<m; i++) {
-            for (int j=0; j<n; j++) {
-                System.out.print("Masukkan matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
-                matriks[i][j]=scanner.nextDouble();
-            }
-            System.out.print("Masukkan solusi SPL-" + (i+1) + " : ");
-            matriks[i][n]=scanner.nextDouble();
-        }
-        Main.spl = matriks;
+        int jumlahSPL = insertJumlahSPL();
+        int jumlahVar = insertJumlahVar();
+
+        double[][] matriks = new double[jumlahSPL][jumlahVar + 1];
+
+        bacaValue(matriks, jumlahSPL, jumlahVar);
+        printMatriks(matriks, jumlahSPL, jumlahVar);
+//        eselonmatriks(matriks, jumlahSPL, jumlahVar);
+//        System.out.println("");
+//        printMatriks(matriks, jumlahSPL, jumlahVar);
+        crammer(matriks,jumlahSPL,jumlahVar);
 
     }
-    public static void tulismatriks() {
-        int m = Main.jumlahspl;
-        int n = Main.jumlahvar;
-        double[][] matriks = Main.spl;
-        for (int i=0; i<m; i++) {
-            for (int j=0; j<n; j++) {
-                System.out.print(matriks[i][j]+" ");
+
+    public static int insertJumlahSPL() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah baris (m): ");
+        return scanner.nextInt();
+    }
+
+    public static int insertJumlahVar() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan jumlah kolom (n): ");
+        return scanner.nextInt();
+    }
+
+    public static void bacaValue(double[][] matriks, int jumlahSPL, int jumlahVar) {
+        Scanner scanner = new Scanner(System.in);
+
+        for (int i = 0; i < jumlahSPL; i++) {
+            for (int j = 0; j < jumlahVar; j++) {
+                System.out.print("Masukkan matriks" + "[" + (i + 1) + "]" + "[" + (j + 1) + "] : ");
+                matriks[i][j] = scanner.nextDouble();
             }
-            System.out.print(matriks[i][n]);
+
+            System.out.print("Masukkan solusi SPL-" + (i + 1) + " : ");
+            matriks[i][jumlahVar] = scanner.nextDouble();
+        }
+    }
+
+    public static void printMatriks(double[][] matriks, int jumlahSPL, int jumlahVar) {
+        for (int i = 0; i < jumlahSPL; i++) {
+            for (int j = 0; j < jumlahVar; j++) {
+                System.out.print(matriks[i][j] + " ");
+            }
+
+            System.out.print(matriks[i][jumlahVar]);
             System.out.println("");
         }
     }
+
+    public static void eselonmatriks(double[][] matriks, int jumlahSPL, int jumlahVar) {
+        int newSPL = jumlahSPL;
+        int newVar = jumlahVar;
+        eselon(matriks, newSPL, newVar);
+    }
+
+    public static void eselon(double[][] matriks, int newSPL, int newVar) {
+        if (newSPL == 1) {
+            double rasio = (1 / matriks[0][0]);
+            for (int j = 0; j < newVar + 1; j++) {
+                matriks[0][j] = matriks[0][j] * rasio;
+            }
+        } else {
+            for (int i = 0; i < newSPL; i++) {
+                double rasio = (1 / matriks[i][0]);
+                for (int j = 0; j < newVar + 1; j++) {
+                    matriks[i][j] = matriks[i][j] * rasio;
+                }
+            }
+            for (int i = 1; i < newSPL; i++) {
+                for (int j = 0; j < newVar + 1; j++) {
+                    matriks[i][j] = matriks[i][j] - matriks[0][j];
+
+                }
+            }
+            double[][] indikator = new double[newSPL - 1][newVar];
+            for (int i = 1; i < newSPL; i++) {
+                for (int j = 1; j < newVar + 1; j++) {
+                    indikator[i - 1][j - 1] = matriks[i][j];
+                }
+            }
+            eselon(indikator, newSPL - 1, newVar - 1);
+            printMatriks(indikator, newSPL - 1, newVar - 1);
+
+        }
+    }
+
+    public static void gantikolom(double[][] matriks, int jumlahSPL, int jumlahVar, int j) {
+        for (int i = 0; i < jumlahSPL; i++) {
+            matriks[i][j] = matriks[i][jumlahVar];
+        }
+    }
+
     public static void copy(double[][] newmatriks, double[][] oldmatriks, int jumlahSPL, int jumlahVar) {
         for (int i = 0; i < jumlahSPL; i++) {
             for (int j = 0; j < jumlahVar + 1; j++) {
