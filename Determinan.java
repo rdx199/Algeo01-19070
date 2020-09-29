@@ -22,7 +22,7 @@ public class Determinan {
         } else {
             while (true) {
                 System.out.println("\nMatriks " + brs + " x " + kol);
-                printMatriks(matriks, brs, kol);
+                printMatriks(matriks);
                 System.out.println("\nMENU DETERMINAN:\n" +
                         "1. Metode Ekspansi Kofaktor\n" +
                         "2. Metode Reduksi Baris\n" +
@@ -116,7 +116,7 @@ public class Determinan {
 
     public static double reduksiBaris(double[][] M) {
         int i, j, k;
-        double rasio, det;
+        double rasio, det = 1;
         double[][] segitigaatas = new double[M.length][M[0].length];
         int n = segitigaatas.length;
 
@@ -126,10 +126,22 @@ public class Determinan {
                 segitigaatas[i][j] = M[i][j];
             }
         }
+        // tukar jika elemen1,1 = 0
+        if (segitigaatas[0][0] == 0) {
+            for (int x = 1; x <segitigaatas.length; x++) {
+                if (segitigaatas[x][0] != 0) {
+                    double[] temp = segitigaatas[0];
+                    segitigaatas[0] = segitigaatas[x];
+                    segitigaatas[x] = temp;
+                    det = -1;
+                    break;
+                }
+            }
+        }
 
         for (i = 0; i < n; i++) {
             for (j = 0; j < n; j++) {
-                if (j > i && segitigaatas[i][i] != 0) {
+                if (j > i) {
                     rasio = segitigaatas[j][i] / segitigaatas[i][i];
                     for (k = 0; k < n; k++) {
                         segitigaatas[j][k] -= rasio * segitigaatas[i][k];
@@ -137,17 +149,19 @@ public class Determinan {
                 }
             }
         }
-        det = 1; //storage for determinant
+         //storage for determinant
         for (i = 0; i < n; i++)
             det *= segitigaatas[i][i];
         return det;
     }
 
-    public static void printMatriks(double[][] matriks, int brs, int kol) {
+    public static void printMatriks(double[][] M) {
+        int brs = M.length;
+        int kol = M[0].length;
         for (int i = 0; i < brs; i++) {
             System.out.print("[\t");
             for (int j = 0; j < kol; j++) {
-                System.out.print(matriks[i][j] + "\t");
+                System.out.print(M[i][j] + "\t");
             }
             System.out.println("\t]");
         }
