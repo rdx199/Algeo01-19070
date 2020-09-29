@@ -20,6 +20,8 @@ public class Createtxt {
         }
     }
     public static void write(String x) {
+        // contoh cara pakai di class lain :
+        // Createtxt.write("\nBla bla bla");
         try {
             BufferedWriter wr = new BufferedWriter(new FileWriter("output.txt", true));
             wr.write(x);
