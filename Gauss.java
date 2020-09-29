@@ -38,7 +38,7 @@ public class Gauss {
                     changecol=true;
 
                 } else {
-                    tukarBaris(matriks,rowPivot,i); // nuker baris kalo ga isallzero
+                    tukarBaris(matriks,rowPivot,i); // nuker baris kalo ga isallkolomzero
                 }
             }
             if (!changecol) {
@@ -58,6 +58,28 @@ public class Gauss {
 
     }
     public static void eselonred(double[][] matriks) {
-        
+        eselonRow(matriks);
+        int currentbaris=1;
+        int totalCol = matriks[0].length, totalRow = matriks.length;
+        while (currentbaris < totalRow) {
+            boolean leadingP = false;
+            int pivotcol=0;
+            while( pivotcol<totalCol-1 && !(leadingP)) {
+                if(matriks[currentbaris][pivotcol]==1){
+                    leadingP=true;
+                } else {
+                    pivotcol++;
+                }
+            }
+            if (leadingP) {
+                for(int i=0; i<currentbaris;i++) {
+                    double multiplier = matriks[i][pivotcol];
+                    for(int j=0;j<totalCol;j++) {
+                        matriks[i][j]-=(multiplier * matriks[currentbaris][j]);
+                    }
+                }
+            } currentbaris++;
+        }
+
     }
 }
