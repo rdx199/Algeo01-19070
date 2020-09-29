@@ -13,17 +13,6 @@ public class Gauss {
         }
 
     }
-    public static boolean isColNull(double[][] matriks, int j) {
-        int i;
-        boolean allZero = true;
-        for (i = 0; i < matriks.length; i++) {
-            if (matriks[i][j] != 0) {
-                allZero = false;
-            }
-        }
-        return allZero;
-    }
-
     public static void eselonRow(double[][] matriks) {
         int i, j, steps, rowPivot;
         double divider, multiplier;
