@@ -18,7 +18,7 @@ public class Spl {
 
         while (true) {
             System.out.println("\nMatriks Augmented " + jumlahSPL + " x " + (jumlahVar+1));
-            printMatriks(matriks);
+            Main.printMatriks(matriks);
             System.out.println("\nMenu Sistem Persamaan Linier:\n" +
                     "1. Metode eliminasi Gauss\n" +
                     "2. Metode eliminasi Gauss-Jordan\n" +
@@ -66,18 +66,6 @@ public class Spl {
 
             System.out.print("Masukkan solusi SPL-" + (i+1) + " : ");
             M[i][jumlahVar]=scanner.nextDouble();
-        }
-    }
-
-    public static void printMatriks(double[][] M) {
-        int brs = M.length;
-        int kol = M[0].length;
-        for (int i = 0; i < brs; i++) {
-            System.out.print("[\t");
-            for (int j = 0; j < kol; j++) {
-                System.out.print(M[i][j] + "\t");
-            }
-            System.out.println("\t]");
         }
     }
     // METHOD UNTUK CRAMER
