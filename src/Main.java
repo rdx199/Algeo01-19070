@@ -50,4 +50,12 @@ public class Main {
         }
 
     }
+    public static void copyToStr(String[][] S, double[][] D) {
+        // m2 : dengan hasil , m3 : matriks persegi
+        for (int i = 0; i < D.length; i++) {
+            for (int j = 0; j < D[0].length; j++) {
+                S[i][j] =String.valueOf(D[i][j]);
+            }
+        }
+    }
 }

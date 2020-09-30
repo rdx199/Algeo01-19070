@@ -1,6 +1,13 @@
 package src;
 
+import javax.sound.midi.Soundbank;
+
 public class getSolution {
+    public static void main(String[] args) {
+        double[][] matriks = Readtxt.read();
+        Main.printMatriks(matriks);
+        gaussJordanSolution(matriks);
+    }
     public static boolean isExistsol(double[][] matriks) {
         int count = 0; //
         boolean isexist;
@@ -33,4 +40,133 @@ public class getSolution {
             System.out.println("");
         }
     }
+    public static boolean isSatuUtama(double[][] M, int idbrs, int idkol) {
+        boolean depanAllZero = true, isOne = false;
+        int count0 = 0;
+        int count1 =0;
+
+        if (M[idbrs][idkol] == 1) {
+            // cek depannya 0 semua
+            for (int j = 0; j<idkol;j++) {
+                if (M[idbrs][j] !=0) {
+                    depanAllZero = false;
+                    break;
+                }
+            }
+            if (depanAllZero) {
+                // cek kolomnya
+                for(int i = 0; i<M.length;i++) {
+                    if (M[i][idkol] == 0) {
+                        count0++;
+                    } else if (M[i][idkol] == 1) {
+                        count1++;
+                    }
+                }
+                if (count1 == 1 && count0 == M.length - 1) {
+                    isOne = true;
+                    }
+                }
+            }
+        return isOne;
+        }
+
+    public static void gaussJordanSolution(double[][] matriks) {
+        int idparameter = 1;
+        // apakah terdapat 1 utama pada column
+        // pada kolom hanya ada 1 buah angka 1 sisanya 0
+        // angka 1 harus menjadi angka pertama pada baris yang tidak nol
+        String[] par = new String[matriks[0].length-1];
+        for (int j=0;j< matriks[0].length-1;j++) {
+            par[j]="s";
+        }
+        for (int i = 0; i< matriks.length;i++) {
+            for(int j=0; j<matriks[0].length-1; j++) {
+                if(isSatuUtama(matriks,i,j)) {
+                    par[j] = String.valueOf(matriks[i][matriks[0].length-1]);
+                }
+            }
+        }
+        for(int j=0;j<matriks[0].length-1;j++) {
+            if(par[j].equals("s")) {
+                par[j]="s"+idparameter;
+                idparameter++;
+            }
+        }
+//        // cuman buat ngecek string
+//        for(int j=0;j<matriks[0].length-1;j++) {
+//            System.out.println(par[j]);
+//        }
+        int stepbaris = 0;
+        String out1;
+        // cek baris
+        for(int j=0;j<matriks[0].length-1;j++) {
+            if (isSatuUtama(matriks,stepbaris,j)) {
+                out1 = "\nx"+(j+1)+" = "+par[j];
+                System.out.print(out1);
+                // ngeprint belakang2nya
+                for (int k = j+1;k < matriks[0].length -1;k++) {
+                    if (matriks[stepbaris][k] != 0) {
+                        double ras = matriks[stepbaris][k];
+                        System.out.print(" + (-"+ras+")"+par[k]);
+                    }
+                }
+                stepbaris++;
+            }
+            else {
+                out1 = "\nx"+(j+1)+" = "+par[j];
+                System.out.print(out1);
+            }
+        }
+    }
+    public static void gaussSolution(double[][] matriks) {
+        Gauss.eselonRed(matriks);
+        int idparameter = 1;
+        // apakah terdapat 1 utama pada column
+        // pada kolom hanya ada 1 buah angka 1 sisanya 0
+        // angka 1 harus menjadi angka pertama pada baris yang tidak nol
+        String[] par = new String[matriks[0].length-1];
+        for (int j=0;j< matriks[0].length-1;j++) {
+            par[j]="s";
+        }
+        for (int i = 0; i< matriks.length;i++) {
+            for(int j=0; j<matriks[0].length-1; j++) {
+                if(isSatuUtama(matriks,i,j)) {
+                    par[j] = String.valueOf(matriks[i][matriks[0].length-1]);
+                }
+            }
+        }
+        for(int j=0;j<matriks[0].length-1;j++) {
+            if(par[j].equals("s")) {
+                par[j]="s"+idparameter;
+                idparameter++;
+            }
+        }
+//        // cuman buat ngecek string
+//        for(int j=0;j<matriks[0].length-1;j++) {
+//            System.out.println(par[j]);
+//        }
+        int stepbaris = 0;
+        String out1;
+        // cek baris
+        for(int j=0;j<matriks[0].length-1;j++) {
+            if (isSatuUtama(matriks,stepbaris,j)) {
+                out1 = "\nx"+(j+1)+" = "+par[j];
+                System.out.print(out1);
+                // ngeprint belakang2nya
+                for (int k = j+1;k < matriks[0].length -1;k++) {
+                    if (matriks[stepbaris][k] != 0) {
+                        double ras = matriks[stepbaris][k];
+                        System.out.print(" + (-"+ras+")"+par[k]);
+                    }
+                }
+                stepbaris++;
+            }
+            else {
+                out1 = "\nx"+(j+1)+" = "+par[j];
+                System.out.print(out1);
+            }
+        }
+    }
 }
+
+

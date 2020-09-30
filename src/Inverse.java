@@ -28,6 +28,8 @@ public class Inverse {
             return;
         }
         matriksBalikan(matriks);
+
+
     }
     public static void bacaValue(double[][] matriks, int brs, int kol) {
         Scanner scanner = new Scanner(System.in);
