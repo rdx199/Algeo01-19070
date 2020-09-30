@@ -46,7 +46,7 @@ public class Cofactor {
         double[][] hasil = new double[matriks.length][matriks.length];
         for (int i = 0; i < matriks.length; i++) {
             for (int j = 0; j < matriks.length; j++) {
-                hasil[i][j] *= x;
+                hasil[i][j] = matriks[i][j] * x;
             }
         } return hasil;
     }
