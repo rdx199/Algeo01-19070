@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -20,9 +27,22 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Determinan">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Determinan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Determinan" />
+      <module name="TUBES1_ALGEO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Inverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Inverse" />
       <module name="TUBES1_ALGEO" />
       <extension name="coverage">
         <pattern>
@@ -49,8 +69,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Determinan" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Inverse" />
+        <item itemvalue="Application.Determinan" />
       </list>
     </recent_temporary>
   </component>
@@ -70,21 +91,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601464092241" />
-    <state width="1237" height="141" key="GridCell.Tab.0.bottom" timestamp="1601464560272">
+    <state width="1237" height="141" key="GridCell.Tab.0.bottom" timestamp="1601475822789">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="141" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601464560272" />
-    <state width="1237" height="141" key="GridCell.Tab.0.center" timestamp="1601464560272">
+    <state width="1237" height="141" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601475822789" />
+    <state width="1237" height="141" key="GridCell.Tab.0.center" timestamp="1601475822789">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="141" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601464560272" />
-    <state width="1237" height="141" key="GridCell.Tab.0.left" timestamp="1601464560272">
+    <state width="1237" height="141" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601475822789" />
+    <state width="1237" height="141" key="GridCell.Tab.0.left" timestamp="1601475822789">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="141" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601464560272" />
-    <state width="1237" height="141" key="GridCell.Tab.0.right" timestamp="1601464560272">
+    <state width="1237" height="141" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601475822789" />
+    <state width="1237" height="141" key="GridCell.Tab.0.right" timestamp="1601475822789">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="141" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601464560272" />
+    <state width="1237" height="141" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601475822789" />
   </component>
 </project>

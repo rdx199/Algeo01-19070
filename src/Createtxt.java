@@ -31,4 +31,23 @@ public class Createtxt {
             e.printStackTrace();
         }
     }
+    public static void writeMatriks(double[][] M) {
+        // contoh cara pakai di class lain :
+        // Createtxt.write("\nBla bla bla");
+        System.out.println("");
+        try {
+            BufferedWriter wr = new BufferedWriter(new FileWriter("output.txt", true));
+            for (int i = 0; i < M.length ; i++) {
+                for (int j = 0; j < M[0].length ; j++) {
+                    wr.write(M[i][j] + " ");
+                }
+                wr.write("\n");
+            }
+
+            wr.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 }

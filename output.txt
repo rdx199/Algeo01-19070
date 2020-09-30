@@ -1,5 +1,0 @@
-
-Dengan menggunakan metode Ekspansi Kofaktor,
-didapat nilai determinan = -2.0
-Dengan menggunakan metode Ekspansi Kofaktor,
-didapat nilai determinan = -2.0

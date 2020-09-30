@@ -11,7 +11,7 @@ public class Main {
         while (true) {
 
             System.out.println(
-                    "MENU UTAMA\n" +
+                    "\nMENU UTAMA\n" +
                             "1. Sistem Persamaaan Linier\n" +
                             "2. Determinan\n" +
                             "3. Matriks balikan\n" +
@@ -28,7 +28,7 @@ public class Main {
             } else if (menu1 == 2) {
                 Determinan.main(args);
             } else if (menu1 == 3) {
-                System.out.println("blm");
+                Inverse.main(args);
             } else if (menu1 == 4) {
                 System.out.println("blm");
             } else if (menu1 == 5) {
