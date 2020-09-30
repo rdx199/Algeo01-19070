@@ -162,7 +162,6 @@ public class Determinan {
                 }
             }
         }
-         //storage for determinant
         for (i = 0; i < n; i++)
             det *= segitigaatas[i][i];
         return det;
