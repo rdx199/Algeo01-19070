@@ -7,22 +7,31 @@ import java.io.FileNotFoundException;
 public class Readtxt {
 
     public static double[][] read () {
-        Scanner scan;
+        Scanner scan; String filename = "input";
+        Scanner f = new Scanner(System.in);
         int jmlKol = 0, jmlBrs = 0;
-        File file = new File("input.txt");
+        boolean found = false;
+
+
         // hitung jumlah baris dan kolom
-        try {
-            scan = new Scanner(file);
-            while (scan.hasNextLine()) {
-                jmlBrs++;
-                jmlKol = scan.nextLine().split(" ").length;
+        while (!found) {
+            try {
+                System.out.print("Masukkan nama file text (tanpa '.txt') : ");
+                filename = f.nextLine();
+                File file = new File(filename+".txt");
+                scan = new Scanner(file);
+                while (scan.hasNextLine()) {
+                    jmlBrs++;
+                    jmlKol = scan.nextLine().split(" ").length;
+                    found = true;
+                }
+            } catch (FileNotFoundException e1) {
+                System.out.println("File not found, please try again!");
             }
-        } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
         }
 
         double[][] M = new double[jmlBrs][jmlKol];
-
+        File file = new File(filename+".txt");
         try {
             scan = new Scanner(file);
             while (scan.hasNextDouble()) {
