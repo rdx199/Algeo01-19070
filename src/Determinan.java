@@ -16,7 +16,7 @@ public class Determinan {
         if (menu1 == 1) {
             System.out.println("BUAT MATRIKS :");
             brs = insertbrs();
-            kol = insertkol();
+            kol = brs;
             matriks = new double[brs][kol];
             System.out.println("");
             bacaValue(matriks, brs, kol);
@@ -79,13 +79,6 @@ public class Determinan {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Pilih (1/2/0) :");
-        return scanner.nextInt();
-    }
-
-    public static int insertkol() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Masukkan jumlah kolom (n): ");
         return scanner.nextInt();
     }
 
