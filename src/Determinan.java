@@ -10,7 +10,7 @@ public class Determinan {
         int brs,kol;
         double[][] matriks;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("1. Buat Matriks 2. Load dari file (1/2) : ");
+        System.out.print("1. Buat Matriks, 2. Load dari file (1/2) : ");
         int menu1 = scanner.nextInt();
 
         if (menu1 == 1) {
@@ -71,7 +71,7 @@ public class Determinan {
     public static int insertbrs() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Masukkan jumlah baris (m): ");
+        System.out.print("Masukkan jumlah baris/kolom (mxm): ");
         return scanner.nextInt();
     }
 

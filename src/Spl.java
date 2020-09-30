@@ -10,7 +10,7 @@ public class Spl {
         int jumlahSPL,jumlahVar;
         double[][] matriks;
 
-        System.out.print("1. Buat Matriks 2. Load dari file (1/2) : ");
+        System.out.print("1. Buat Matriks, 2. Load dari file (1/2) : ");
         int menu1 = scanner.nextInt();
 
         if (menu1 == 1) {
