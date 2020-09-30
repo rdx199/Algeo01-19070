@@ -1,20 +1,37 @@
 package src;
 
-
 import java.util.Scanner;
 
 public class Spl {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Sistem Persamaan Linear\n\nBUAT MATRIKS :");
-        // input matriks
-        System.out.print("Masukkan Jumlah Persamaan (SPL) : ");
-        int jumlahSPL = scanner.nextInt();
-        System.out.print("Masukkan Jumlah Variabel : ");
-        int jumlahVar = scanner.nextInt();
-        double[][] matriks = new double[jumlahSPL][jumlahVar + 1];
-        bacaValue(matriks, jumlahSPL, jumlahVar);
+
+        int jumlahSPL,jumlahVar;
+        double[][] matriks;
+
+        System.out.print("1. Buat Matriks 2. Load dari file (1/2) : ");
+        int menu1 = scanner.nextInt();
+
+        if (menu1 == 1) {
+            System.out.println("\nBUAT MATRIKS :");
+            // input matriks
+            System.out.print("Masukkan Jumlah Persamaan (SPL) : ");
+            jumlahSPL = scanner.nextInt();
+            System.out.print("Masukkan Jumlah Variabel : ");
+            jumlahVar = scanner.nextInt();
+            matriks = new double[jumlahSPL][jumlahVar + 1];
+            bacaValue(matriks, jumlahSPL, jumlahVar);
+        }
+        else if (menu1 == 2) {
+            matriks = Readtxt.read();
+            jumlahSPL = matriks.length;
+            jumlahVar = matriks[0].length - 1;
+        }
+        else {
+            System.out.println("Masukan salah!");
+            return;
+        }
 
         while (true) {
             System.out.println("\nMatriks Augmented " + jumlahSPL + " x " + (jumlahVar+1));
@@ -68,6 +85,7 @@ public class Spl {
             M[i][jumlahVar]=scanner.nextDouble();
         }
     }
+
     // METHOD UNTUK CRAMER
     public static void gantikolom(double[][] M,int kolom) {
         for (int i = 0; i < M.length; i++) {
