@@ -7,17 +7,33 @@ import static java.lang.StrictMath.pow;
 public class Determinan {
 
     public static void main(String[] args) {
+        int brs,kol;
+        double[][] matriks;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("BUAT MATRIKS :");
-        int brs = insertbrs();
-        int kol = insertkol();
-        double[][] matriks = new double[brs][kol];
-        System.out.println("");
-        bacaValue(matriks, brs, kol);
+        System.out.println("1. Buat Matriks 2. Load dari file (1/2) : ");
+        int menu1 = scanner.nextInt();
 
+        if (menu1 == 1) {
+            System.out.println("BUAT MATRIKS :");
+            brs = insertbrs();
+            kol = insertkol();
+            matriks = new double[brs][kol];
+            System.out.println("");
+            bacaValue(matriks, brs, kol);
+        }
+        else if (menu1 == 2) {
+            matriks = Readtxt.read();
+            brs = matriks.length;
+            kol = matriks[0].length;
+        }
+        else {
+            System.out.println("Masukan salah!");
+            return;
+        }
         // loop menu
         if (brs != kol) {
             System.out.print("Tidak ada determinan karena bukan matriks persegi\n\nPress ENTER to go back...");
+            Createtxt.write("\nTidak ada determinan karena bukan matriks persegi\n");
             scanner.nextLine();
         } else {
             while (true) {
@@ -33,14 +49,18 @@ public class Determinan {
                     break;
                 } else if (pilihan == 1) {
                     System.out.println("Dengan menggunakan metode Ekspansi Kofaktor,\ndidapat nilai determinan = " + ekspansiKofaktor(matriks));
+                    Createtxt.write("\nDengan menggunakan metode Ekspansi Kofaktor,\ndidapat nilai determinan = " + ekspansiKofaktor(matriks));
                     System.out.print("\nPress ENTER to go back...");
                     scanner.nextLine();
                 } else if (pilihan == 2) {
                     System.out.println("Dengan menggunakan metode Reduksi Baris,\ndidapat nilai determinan = " + reduksiBaris(matriks));
+                    Createtxt.write("\nDengan menggunakan metode Reduksi Baris,\ndidapat nilai determinan = " + reduksiBaris(matriks));
                     System.out.print("\nPress ENTER to go back...");
                     scanner.nextLine();
                 } else {
                     System.out.println("Masukkan salah, silahkan coba lagi!");
+                    Createtxt.write("\nMasukkan salah, silahkan coba lagi!");
+
                 }
             }
         }
