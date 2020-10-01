@@ -1,3 +1,17 @@
-Persamaan : 
- - 2.666666666666666x^2 + 11.666666666666666x^1 - 6.0f(6.0) = -31.99999999999997
+
+SPL yang terbentuk: 
+3.0 8.0 6.0 3.0 3.0 
+8.0 26.0 10.0 4.0 21.0 
+6.0 10.0 38.0 2.0 -5.0 
+3.0 4.0 2.0 11.0 -11.0 
+
+
+Masukkan nilai x[1] yang ingin ditaksir : 1.0
+Masukkan nilai x[2] yang ingin ditaksir : 2.0
+Masukkan nilai x[3] yang ingin ditaksir : 3.0
+
+Persamaan yang terbentuk setelah menyelesaikan SPL: 
+ - 8.124999999999996 + 3.187499999999999x1 + 0.31249999999999983x2 - 3.9968028886505635E-15x3
+Taksiran : 
+y = -4.312500000000009
 

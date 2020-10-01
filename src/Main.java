@@ -32,7 +32,7 @@ public class Main {
             } else if (menu1 == 4) {
                 Interpolasi.main(args);
             } else if (menu1 == 5) {
-                System.out.println("blm");
+                Regresi.main(args);
             } else {
                 System.out.println("Masukkan salah, silahkan coba lagi!");
             }
