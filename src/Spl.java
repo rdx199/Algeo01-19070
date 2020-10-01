@@ -81,12 +81,11 @@ public class Spl {
         Scanner scanner = new Scanner(System.in);
 
         for (int i=0; i<jumlahSPL; i++) {
+            System.out.print("Masukkan baris ke-"+(i+1)+" : ");
             for (int j=0; j<jumlahVar; j++) {
-                System.out.print("Masukkan matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
+//                System.out.print("Masukkan matriks"+ "[" + (i+1) + "]"  + "[" + (j+1) + "] : ");
                 M[i][j]=scanner.nextDouble();
             }
-
-            System.out.print("Masukkan solusi SPL-" + (i+1) + " : ");
             M[i][jumlahVar]=scanner.nextDouble();
         }
     }
@@ -120,7 +119,10 @@ public class Spl {
             System.out.println("tidak ada determinan dikarenakan matriks bukan persegi");
         } else {
             double det = Determinan.ekspansiKofaktor(m3);
-
+            if (det == 0) {
+                System.out.println("Metode Cramer tidak dapat digunakan karena determinan bernilai 0");
+                return;
+            }
             for (int j = 0; j < M[0].length - 1; j++) {
                 gantikolom(m2,j);
                 // copy m2 ke m3, tapi tidak termasuk hasil spl

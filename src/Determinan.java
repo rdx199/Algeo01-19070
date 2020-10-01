@@ -86,8 +86,9 @@ public class Determinan {
         Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < brs; i++) {
+            System.out.print("Masukkan baris ke-"+(i+1)+" : ");
             for (int j = 0; j < kol; j++) {
-                System.out.print("Masukkan matriks" + "[" + (i + 1) + "]" + "[" + (j + 1) + "] : ");
+//                System.out.print("Masukkan matriks" + "[" + (i + 1) + "]" + "[" + (j + 1) + "] : ");
                 matriks[i][j] = scanner.nextDouble();
             }
         }
