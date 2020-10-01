@@ -1,6 +1,7 @@
 package src;
 
 import static java.lang.StrictMath.pow;
+import java.text.DecimalFormat;
 
 public class Cofactor {
     public static double[][] excMatriks(double[][] matriks, int baris, int kolom) {
@@ -51,6 +52,7 @@ public class Cofactor {
         } return hasil;
     }
     public static void makeInverse(double[][] matriks) {
+        DecimalFormat df = new DecimalFormat("#.###");
         double[][] kofaktor;
         double[][] adjoin;
         double[][] inverse;
@@ -70,7 +72,13 @@ public class Cofactor {
             kofaktor=getCofactor(mSquare);
             adjoin=getTranspose(kofaktor);
             inverse=kaliKons(adjoin,(1/determinan));
+            for (int i = 0;i<inverse.length;i++) {
+                for (int j = 0; j < inverse[0].length; j++) {
+                    inverse[i][j] = Double.parseDouble(df.format(inverse[i][j]));
+                }
+            }
             Main.printMatriks(inverse);
+            getSolution.om(inverse);
             getSolution.getSolutionInverse(matriks, inverse);
         }
     }

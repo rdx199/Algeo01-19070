@@ -1,5 +1,6 @@
 package src;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Inverse {
@@ -16,38 +17,31 @@ public class Inverse {
             kol = brs;
             matriks = new double[brs][kol];
             System.out.println("");
-            bacaValue(matriks, brs, kol);
+            Determinan.bacaValue(matriks, brs, kol);
         }
         else if (menu1 == 2) {
             matriks = Readtxt.read();
-            brs = matriks.length;
-            kol = matriks[0].length;
         }
         else {
             System.out.println("Masukan salah!");
+            Createtxt.write("Masukan salah!");
             return;
         }
         matriksBalikan(matriks);
+        Scanner scan = new Scanner(System.in);
 
-
+        System.out.print("\nPress ENTER to go back...");
+        scan.nextLine();
     }
-    public static void bacaValue(double[][] matriks, int brs, int kol) {
-        Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < brs; i++) {
-            for (int j = 0; j < kol; j++) {
-                System.out.print("Masukkan matriks" + "[" + (i + 1) + "]" + "[" + (j + 1) + "] : ");
-                matriks[i][j] = scanner.nextDouble();
-            }
-        }
-    }
     public static int insertbrs() {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Masukkan jumlah baris/kolom (mxm): ");
         return scanner.nextInt();
     }
     public static void matriksBalikan(double[][] matriks) {
+        DecimalFormat df = new DecimalFormat("#.###");
+
         double[][] kofaktor;
         double[][] adjoin;
         double[][] inverse;
@@ -71,13 +65,15 @@ public class Inverse {
             inverse=Cofactor.kaliKons(adjoin,(1/determinan));
             for (int i = 0; i < mSquare.length; i++) {
                 for (int j = 0; j < mSquare[0].length; j++) {
+                    inverse[i][j] = Double.parseDouble(df.format(inverse[i][j]));
                     if (inverse[i][j] < epsilon && inverse[i][j] > -epsilon) {
                         inverse[i][j] = 0;
                     }
                 }
             }
-            System.out.println("matriks balikannya adalah");
+            System.out.println("matriks balikannya adalah : ");
             Main.printMatriks(inverse);
+            Createtxt.write("matriks balikannya adalah : ");
             Createtxt.writeMatriks(inverse);
         }
     }

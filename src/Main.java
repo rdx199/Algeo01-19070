@@ -19,7 +19,7 @@ public class Main {
                             "5. Regresi linier berganda\n" +
                             "0. EXIT\n");
 
-            System.out.print("Pilih (1/2/3/4/5/0) :");
+            System.out.print("Pilih (1/2/3/4/5/0) : ");
             int menu1 = scanner.nextInt();
             if (menu1 == 0) {
                 break;
@@ -30,7 +30,7 @@ public class Main {
             } else if (menu1 == 3) {
                 Inverse.main(args);
             } else if (menu1 == 4) {
-                System.out.println("blm");
+                Interpolasi.main(args);
             } else if (menu1 == 5) {
                 System.out.println("blm");
             } else {
@@ -38,6 +38,7 @@ public class Main {
             }
         }
     }
+
     public static void printMatriks(double[][] M) {
         int brs = M.length;
         int kol = M[0].length;
@@ -50,12 +51,5 @@ public class Main {
         }
 
     }
-    public static void copyToStr(String[][] S, double[][] D) {
-        // m2 : dengan hasil , m3 : matriks persegi
-        for (int i = 0; i < D.length; i++) {
-            for (int j = 0; j < D[0].length; j++) {
-                S[i][j] =String.valueOf(D[i][j]);
-            }
-        }
-    }
+
 }

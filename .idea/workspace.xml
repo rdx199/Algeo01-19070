@@ -27,7 +27,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Spl">
+  <component name="RunManager" selected="Application.Interpolasi">
     <configuration name="Determinan" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="src.Determinan" />
       <module name="TUBES1_ALGEO" />
@@ -41,8 +41,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Inverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="src.Inverse" />
+    <configuration name="Interpolasi" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.Interpolasi" />
       <module name="TUBES1_ALGEO" />
       <extension name="coverage">
         <pattern>
@@ -95,11 +95,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Spl" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Determinan" />
+        <item itemvalue="Application.Interpolasi" />
         <item itemvalue="Application.getSolution" />
-        <item itemvalue="Application.Inverse" />
+        <item itemvalue="Application.Determinan" />
+        <item itemvalue="Application.Spl" />
       </list>
     </recent_temporary>
   </component>
@@ -115,25 +115,55 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="424" y="235" width="432" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1601569532829">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="424" y="235" width="432" height="216" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680@0.0.1280.680" timestamp="1601569532829" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601464092241">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1601464092241" />
-    <state width="342" height="496" key="GridCell.Tab.0.bottom" timestamp="1601563821844">
+    <state width="417" height="553" key="GridCell.Tab.0.bottom" timestamp="1601578358530">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="342" height="496" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601563821844" />
-    <state width="342" height="496" key="GridCell.Tab.0.center" timestamp="1601563821844">
+    <state width="417" height="553" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1601578358530" />
+    <state width="417" height="553" key="GridCell.Tab.0.center" timestamp="1601578358529">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="342" height="496" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601563821844" />
-    <state width="342" height="496" key="GridCell.Tab.0.left" timestamp="1601563821844">
+    <state width="417" height="553" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1601578358529" />
+    <state width="417" height="553" key="GridCell.Tab.0.left" timestamp="1601578358529">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="342" height="496" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601563821844" />
-    <state width="342" height="496" key="GridCell.Tab.0.right" timestamp="1601563821844">
+    <state width="417" height="553" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1601578358529" />
+    <state width="417" height="553" key="GridCell.Tab.0.right" timestamp="1601578358529">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="342" height="496" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601563821844" />
+    <state width="417" height="553" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1601578358529" />
+    <state x="153" y="52" width="974" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1601571735694">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="153" y="52" width="974" height="628" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1601571735694" />
+    <state x="687" y="32" width="876" height="667" key="dock-window-1" timestamp="1601574224165">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="687" y="32" width="876" height="667" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1601574224165" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1601570802852">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1601570802852" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1601577712836">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1601577712836" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

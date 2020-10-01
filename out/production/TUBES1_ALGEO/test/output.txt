@@ -1,0 +1,28 @@
+
+Tidak ada determinan karena bukan matriks persegi
+
+Dengan menggunakan metode Ekspansi Kofaktor,
+didapat nilai determinan = 1.0
+Dengan menggunakan metode Reduksi Baris,
+didapat nilai determinan = 1.0
+Dengan menggunakan metode Ekspansi Kofaktor,
+didapat nilai determinan = 1.0
+Dengan menggunakan metode Reduksi Baris,
+didapat nilai determinan = 1.0
+Tidak ada determinan karena bukan matriks persegi
+
+-0.5 0.3333333333333333 0.16666666666666666 
+0.75 -0.6666666666666666 0.41666666666666663 
+0.0 0.3333333333333333 -0.3333333333333333 
+0.0 0.5 -0.5 
+-0.14285714285714285 -0.3571428571428571 0.7857142857142857 
+0.42857142857142855 0.07142857142857142 -0.3571428571428571 
+
+Dengan menggunakan metode Ekspansi Kofaktor,
+didapat nilai determinan = -17.0
+Dengan menggunakan metode Ekspansi Kofaktor,
+didapat nilai determinan = -17.0
+Dengan menggunakan metode Reduksi Baris,
+didapat nilai determinan = -17.0-0.16666666666666666 0.12962962962962962 0.09259259259259259 
+0.25 -0.027777777777777776 -0.3055555555555555 
+0.16666666666666666 -0.018518518518518517 0.12962962962962962 

@@ -10,6 +10,7 @@ public class Determinan {
         int brs,kol;
         double[][] matriks;
         Scanner scanner = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         System.out.print("1. Buat Matriks, 2. Load dari file (1/2) : ");
         int menu1 = scanner.nextInt();
 
@@ -51,12 +52,12 @@ public class Determinan {
                     System.out.println("Dengan menggunakan metode Ekspansi Kofaktor,\ndidapat nilai determinan = " + ekspansiKofaktor(matriks));
                     Createtxt.write("\nDengan menggunakan metode Ekspansi Kofaktor,\ndidapat nilai determinan = " + ekspansiKofaktor(matriks));
                     System.out.print("\nPress ENTER to go back...");
-                    scanner.nextLine();
+                    scan.nextLine();
                 } else if (pilihan == 2) {
                     System.out.println("Dengan menggunakan metode Reduksi Baris,\ndidapat nilai determinan = " + reduksiBaris(matriks));
                     Createtxt.write("\nDengan menggunakan metode Reduksi Baris,\ndidapat nilai determinan = " + reduksiBaris(matriks));
                     System.out.print("\nPress ENTER to go back...");
-                    scanner.nextLine();
+                    scan.nextLine();
                 } else {
                     System.out.println("Masukkan salah, silahkan coba lagi!");
                     Createtxt.write("\nMasukkan salah, silahkan coba lagi!");

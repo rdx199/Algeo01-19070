@@ -13,12 +13,12 @@ public class Spl {
         int menu1 = scanner.nextInt();
 
         if (menu1 == 1) {
-            System.out.println("\nBUAT MATRIKS :");
             // input matriks
             System.out.print("Masukkan Jumlah Persamaan (SPL) : ");
             jumlahSPL = scanner.nextInt();
             System.out.print("Masukkan Jumlah Variabel : ");
             jumlahVar = scanner.nextInt();
+            System.out.println("\nBUAT MATRIKS Augmented " + jumlahSPL + " x " + (jumlahVar+1));
             matriks = new double[jumlahSPL][jumlahVar + 1];
             bacaValue(matriks, jumlahSPL, jumlahVar);
         }
@@ -53,21 +53,25 @@ public class Spl {
                 break;
             } else if (pilihan == 1) {
                 System.out.println("Dengan menggunakan metode Eliminasi Gauss,\ndidapat : ");
+                Createtxt.write("Dengan menggunakan metode Eliminasi Gauss,\ndidapat :");
                 getSolution.gaussSolution(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 2) {
                 System.out.println("Dengan menggunakan metode Eliminasi Gauss Jordan,\ndidapat :");
+                Createtxt.write("Dengan menggunakan metode Eliminasi Gauss Jordan,\ndidapat :");
                 getSolution.gaussJordanSolution(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 3) {
                 System.out.println("Dengan menggunakan metode Matriks Balikan,\ndidapat :");
+                Createtxt.write("\nDengan menggunakan metode Matriks Balikan,\ndidapat :");
                 Cofactor.makeInverse(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 4) {
                 System.out.println("Dengan menggunakan metode Cramer,\ndidapat :");
+                Createtxt.write("Dengan menggunakan metode Matriks Balikan,\ndidapat :");
                 cramer(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
@@ -117,10 +121,12 @@ public class Spl {
         }
         if (M.length != M[0].length - 1) {
             System.out.println("tidak ada determinan dikarenakan matriks bukan persegi");
+            Createtxt.write("tidak ada determinan dikarenakan matriks bukan persegi");
         } else {
             double det = Determinan.ekspansiKofaktor(m3);
             if (det == 0) {
                 System.out.println("Metode Cramer tidak dapat digunakan karena determinan bernilai 0");
+                Createtxt.write("Metode Cramer tidak dapat digunakan karena determinan bernilai 0");
                 return;
             }
             for (int j = 0; j < M[0].length - 1; j++) {
@@ -133,6 +139,7 @@ public class Spl {
                 }
                 double detx = Determinan.ekspansiKofaktor(m3);
                 System.out.println("x" + (j + 1) + " = " + (detx / det));
+                Createtxt.write("x" + (j + 1) + " = " + (detx / det));
                 copy(m2,M);
 
             }
