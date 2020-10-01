@@ -9,7 +9,6 @@ public class Spl {
 
         int jumlahSPL,jumlahVar;
         double[][] matriks;
-
         System.out.print("1. Buat Matriks, 2. Load dari file (1/2) : ");
         int menu1 = scanner.nextInt();
 
@@ -33,7 +32,10 @@ public class Spl {
             return;
         }
 
+        double[][] matriks1 = new double[matriks.length][matriks[0].length];
+
         while (true) {
+            copy(matriks1,matriks);
             System.out.println("\nMatriks Augmented " + jumlahSPL + " x " + (jumlahVar+1));
             Main.printMatriks(matriks);
             System.out.println("\nMenu Sistem Persamaan Linier:\n" +
@@ -51,19 +53,22 @@ public class Spl {
                 break;
             } else if (pilihan == 1) {
                 System.out.println("Dengan menggunakan metode Eliminasi Gauss,\ndidapat : ");
+                getSolution.gaussSolution(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 2) {
                 System.out.println("Dengan menggunakan metode Eliminasi Gauss Jordan,\ndidapat :");
+                getSolution.gaussJordanSolution(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 3) {
                 System.out.println("Dengan menggunakan metode Matriks Balikan,\ndidapat :");
+                Cofactor.makeInverse(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 4) {
                 System.out.println("Dengan menggunakan metode Cramer,\ndidapat :");
-                cramer(matriks);
+                cramer(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else {

@@ -44,7 +44,7 @@ public class Main {
         for (int i = 0; i < brs; i++) {
             System.out.print("[\t");
             for (int j = 0; j < kol; j++) {
-                System.out.print(M[i][j] + "\t");
+                System.out.print(M[i][j] + "  ");
             }
             System.out.println("\t]");
         }
