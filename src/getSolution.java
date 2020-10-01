@@ -107,7 +107,7 @@ public class getSolution {
                 for (int k = j+1;k < matriks[0].length -1;k++) {
                     if (matriks[stepbaris][k] != 0) {
                         double ras = matriks[stepbaris][k];
-                        System.out.print(" + (-"+ras+")"+par[k]);
+                        System.out.print(" + ("+((-1)*ras)+")"+par[k]);
                     }
                 }
                 stepbaris++;
