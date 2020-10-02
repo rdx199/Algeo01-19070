@@ -1,32 +1,7 @@
-
-Dengan menggunakan metode Eliminasi Gauss,
-didapat :
-Matriks Eselon Reduksi dari SPL :
-1.0 3.0 2.0 
-0.0 1.0 0.0 
-
-Solusi SPL : 
-
-x1 = 2.0
-x2 = 0.04.0 -3.0 
--1.0 1.0 
-
-x1 = 2.0
-x2 = 0.0
+output
 Dengan menggunakan metode Matriks Balikan,
 didapat :
+Tidak ada determinan karena bukan matriks persegi
 Dengan menggunakan metode Matriks Balikan,
 didapat :
-Dengan menggunakan metode Matriks Balikan,
-didapat :
--0.714 0.429 
-0.571 -0.143 
-
-x1 = 1.146
-x2 = 0.28400000000000003
-Dengan menggunakan metode Matriks Balikan,
-didapat :
-Dengan menggunakan metode Matriks Balikan,
-didapat :
-Dengan menggunakan metode Matriks Balikan,
-didapat :
+Tidak ada determinan karena bukan matriks persegi

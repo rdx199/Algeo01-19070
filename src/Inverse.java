@@ -58,6 +58,7 @@ public class Inverse {
         double determinan = Determinan.ekspansiKofaktor(mSquare);
         if(matriks.length != matriks[0].length || determinan==0) {
             System.out.println("matriks harus matriks persegi atau determinan tidak boleh nol");
+            Createtxt.writeoln("matriks harus matriks persegi atau determinan tidak boleh nol");
         }
         else {
             kofaktor=Cofactor.getCofactor(mSquare);
