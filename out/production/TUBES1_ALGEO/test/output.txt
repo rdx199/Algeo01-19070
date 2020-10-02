@@ -1,7 +1,0 @@
-output
-Dengan menggunakan metode Matriks Balikan,
-didapat :
-Tidak ada determinan karena bukan matriks persegi
-Dengan menggunakan metode Matriks Balikan,
-didapat :
-Tidak ada determinan karena bukan matriks persegi
