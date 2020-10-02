@@ -1,12 +1,7 @@
 package src;
 
 public class getSolution {
-    public static void main(String[] args) {
-        double[][] matriks = Readtxt.read();
-        Main.printMatriks(matriks);
-        Gauss.eselonRed(matriks);
-        Main.printMatriks(matriks);
-    }
+
     public static void o(String a) {
         Createtxt.write(a);
     }

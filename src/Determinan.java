@@ -107,6 +107,7 @@ public class Determinan {
             return M[0][0];}
         else if (brseff != koleff) {
                 System.out.println("Tidak ada determinan karena bukan matriks persegi");
+                Createtxt.writeoln("Tidak ada determinan karena bukan matriks persegi");
                 return 0;
 
         } else {

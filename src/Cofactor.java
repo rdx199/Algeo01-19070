@@ -67,6 +67,7 @@ public class Cofactor {
         double determinan = Determinan.ekspansiKofaktor(mSquare);
         if(matriks.length != matriks[0].length-1) {
             System.out.println("matriks harus merupakan matriks persegi");
+            Createtxt.writeoln("matriks harus merupakan matriks persegi");
         }
         else {
             kofaktor=getCofactor(mSquare);

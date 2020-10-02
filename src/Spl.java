@@ -53,19 +53,19 @@ public class Spl {
                 break;
             } else if (pilihan == 1) {
                 System.out.println("Dengan menggunakan metode Eliminasi Gauss,\ndidapat : ");
-                Createtxt.write("Dengan menggunakan metode Eliminasi Gauss,\ndidapat :");
+                Createtxt.write("\nDengan menggunakan metode Eliminasi Gauss,\ndidapat :");
                 getSolution.gaussSolution(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 2) {
                 System.out.println("Dengan menggunakan metode Eliminasi Gauss Jordan,\ndidapat :");
-                Createtxt.write("Dengan menggunakan metode Eliminasi Gauss Jordan,\ndidapat :");
+                Createtxt.write("\nDengan menggunakan metode Eliminasi Gauss Jordan,\ndidapat :");
                 getSolution.gaussJordanSolution(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
             } else if (pilihan == 3) {
                 System.out.println("Dengan menggunakan metode Matriks Balikan,\ndidapat :");
-                Createtxt.write("\nDengan menggunakan metode Matriks Balikan,\ndidapat :");
+                Createtxt.write("Dengan menggunakan metode Matriks Balikan,\ndidapat :\n");
                 Cofactor.makeInverse(matriks1);
                 System.out.print("\nPress ENTER to go back...");
                 scan.nextLine();
