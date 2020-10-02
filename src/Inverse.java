@@ -74,6 +74,7 @@ public class Inverse {
             System.out.println("matriks balikannya adalah : ");
             Main.printMatriks(inverse);
             Createtxt.write("matriks balikannya adalah : ");
+            Createtxt.writeoln("");
             Createtxt.writeMatriks(inverse);
         }
     }

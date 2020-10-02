@@ -6,9 +6,13 @@ import java.io.IOException;  // Import the IOException class to handle errors
 import java.io.FileWriter;
 
 public class Createtxt {
+
     public static void create(String[] args) {
         try {
-            File txt = new File("output.txt");
+            File upOne = new File(System.getProperty("user.dir"));
+            String path = (upOne+File.separator+"test"+File.separator+"output.txt");
+
+            File txt = new File(path);
             if (txt.createNewFile()) {
                 System.out.println(txt.getName()+" berhasil dibuat.");
             } else {
@@ -23,7 +27,9 @@ public class Createtxt {
         // contoh cara pakai di class lain :
         // Createtxt.write("\nBla bla bla");
         try {
-            BufferedWriter wr = new BufferedWriter(new FileWriter("output.txt", true));
+            File upOne = new File(System.getProperty("user.dir"));
+            String path = (upOne+File.separator+"test"+File.separator+"output.txt");
+            BufferedWriter wr = new BufferedWriter(new FileWriter(path, true));
             wr.write(x);
             wr.close();
         } catch (IOException e) {
@@ -35,7 +41,9 @@ public class Createtxt {
         // contoh cara pakai di class lain :
         // Createtxt.write("\nBla bla bla");
         try {
-            BufferedWriter wr = new BufferedWriter(new FileWriter("output.txt", true));
+            File upOne = new File(System.getProperty("user.dir"));
+            String path = (upOne+File.separator+"test"+File.separator+"output.txt");
+            BufferedWriter wr = new BufferedWriter(new FileWriter(path, true));
             wr.write(x+"\n");
             wr.close();
         } catch (IOException e) {
@@ -48,8 +56,9 @@ public class Createtxt {
         // Createtxt.write("\nBla bla bla");
         try {
 
-            BufferedWriter wr = new BufferedWriter(new FileWriter("output.txt", true));
-
+            File upOne = new File(System.getProperty("user.dir"));
+            String path = (upOne+File.separator+"test"+File.separator+"output.txt");
+            BufferedWriter wr = new BufferedWriter(new FileWriter(path, true));
             for (int i = 0; i < M.length ; i++) {
                 for (int j = 0; j < M[0].length ; j++) {
                     wr.write(M[i][j] + " ");

@@ -77,7 +77,8 @@ public class Cofactor {
                     inverse[i][j] = Double.parseDouble(df.format(inverse[i][j]));
                 }
             }
-            Main.printMatriks(inverse);
+            if (determinan != 0) {
+            Main.printMatriks(inverse); }
             getSolution.om(inverse);
             getSolution.getSolutionInverse(matriks, inverse);
         }

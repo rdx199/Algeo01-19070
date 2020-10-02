@@ -1,6 +1,8 @@
 package src;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 
@@ -16,9 +18,14 @@ public class Readtxt {
         // hitung jumlah baris dan kolom
         while (!found) {
             try {
+
                 System.out.print("Masukkan nama file text (tanpa '.txt') : ");
                 filename = f.nextLine();
-                File file = new File(filename+".txt");
+                File upOne = new File(System.getProperty("user.dir"));
+                String path = (upOne+File.separator+"test"+File.separator+filename+".txt");
+                System.out.println("File :" + path);
+                File file = new File(path);
+
                 scan = new Scanner(file);
                 while (scan.hasNextLine()) {
                     jmlBrs++;
@@ -31,7 +38,9 @@ public class Readtxt {
         }
 
         double[][] M = new double[jmlBrs][jmlKol];
-        File file = new File(filename+".txt");
+        File upOne = new File(System.getProperty("user.dir"));
+        String path = (upOne+File.separator+"test"+File.separator+filename+".txt");
+        File file = new File(path);
         try {
             scan = new Scanner(file);
             while (scan.hasNextDouble()) {

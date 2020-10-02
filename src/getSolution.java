@@ -39,6 +39,11 @@ public class getSolution {
 
     public static void getSolutionInverse(double[][] matriks, double[][] inverse) {
         double sum;
+        if (!(isExistsol(matriks))) {
+            System.out.println("\nSPL tidak memiliki solusi");
+            o("\nSPL tidak memiliki solusi\n");
+            return;
+        }
         for (int i = 0; i < inverse.length; i++) {
             sum = 0;
             for (int j = 0; j < inverse.length; j++) {
@@ -48,6 +53,7 @@ public class getSolution {
             System.out.print("x" + (i + 1) + " = " + sum);
             System.out.println("");
             o("x" + (i + 1) + " = " + sum);
+            o("\n");
         }
     }
 
@@ -88,16 +94,16 @@ public class getSolution {
         Gauss.eselonRed(matriks);
         System.out.println("Matriks Eselon Reduksi dari SPL :");
         Main.printMatriks(matriks);
-        o("Matriks Eselon Reduksi dari SPL :");
+        o("Matriks Eselon Reduksi dari SPL :\n");
         om(matriks);
         if (!(isExistsol(matriks))) {
             System.out.println("\nSPL tidak memiliki solusi");
-            o("\nSPL tidak memiliki solusi");
+            o("\nSPL tidak memiliki solusi\n");
             return;
         }
         int idparameter = 1;
         System.out.println("\nSolusi SPL : ");
-        o("Solusi SPL : ");
+        o("Solusi SPL : \n");
         String[] par = new String[matriks[0].length - 1];
         for (int j = 0; j < matriks[0].length - 1; j++) {
             par[j] = "s";
@@ -123,7 +129,7 @@ public class getSolution {
             if (isSatuUtama(matriks, stepbaris, j)) {
                 out1 = "x" + (j + 1) + " = " + par[j];
                 System.out.print("\n"+out1);
-                o(out1);
+                o("\n"+out1);
                 // ngeprint belakang2nya
 
                 for (int k = j + 1; k < matriks[0].length - 1; k++) {
@@ -139,29 +145,29 @@ public class getSolution {
             } else {
                 out1 = "x" + (j + 1) + " = " + par[j];
                 System.out.print("\n"+out1);
-                o(out1);
+                o("\n"+out1);
             }
         }
     }
 
     public static void gaussSolution(double[][] matriks) {
 
-        // ubah menjadi gauss
+        // ubah menjadi gauss jordan
         o("\n");
         Gauss.eselonRow(matriks);
-        System.out.println("Matriks Eselon dari SPL :");
+        System.out.println("Matriks Eselon Reduksi dari SPL :");
         Main.printMatriks(matriks);
-        o("Matriks Eselon dari SPL :");
+        o("Matriks Eselon Reduksi dari SPL :\n");
         om(matriks);
+        Gauss.eselonRed(matriks);
         if (!(isExistsol(matriks))) {
             System.out.println("\nSPL tidak memiliki solusi");
-            o("\nSPL tidak memiliki solusi");
+            o("\nSPL tidak memiliki solusi\n");
             return;
         }
-        Gauss.eselonRed(matriks);
         int idparameter = 1;
         System.out.println("\nSolusi SPL : ");
-        o("Solusi SPL : ");
+        o("Solusi SPL : \n");
         String[] par = new String[matriks[0].length - 1];
         for (int j = 0; j < matriks[0].length - 1; j++) {
             par[j] = "s";
@@ -187,7 +193,7 @@ public class getSolution {
             if (isSatuUtama(matriks, stepbaris, j)) {
                 out1 = "x" + (j + 1) + " = " + par[j];
                 System.out.print("\n"+out1);
-                o(out1);
+                o("\n"+out1);
                 // ngeprint belakang2nya
 
                 for (int k = j + 1; k < matriks[0].length - 1; k++) {
@@ -203,7 +209,7 @@ public class getSolution {
             } else {
                 out1 = "x" + (j + 1) + " = " + par[j];
                 System.out.print("\n"+out1);
-                o(out1);
+                o("\n"+out1);
             }
         }
     }

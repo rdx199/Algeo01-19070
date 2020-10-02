@@ -1,28 +1,25 @@
+Dengan menggunakan metode Eliminasi Gauss,
+didapat :
+Matriks Eselon Reduksi dari SPL :
+1.0 2.0 3.0 
+0.0 1.0 2.0 
 
-Tidak ada determinan karena bukan matriks persegi
+Solusi SPL : 
 
-Dengan menggunakan metode Ekspansi Kofaktor,
-didapat nilai determinan = 1.0
-Dengan menggunakan metode Reduksi Baris,
-didapat nilai determinan = 1.0
-Dengan menggunakan metode Ekspansi Kofaktor,
-didapat nilai determinan = 1.0
-Dengan menggunakan metode Reduksi Baris,
-didapat nilai determinan = 1.0
-Tidak ada determinan karena bukan matriks persegi
+x1 = -1.0
+x2 = 2.0Dengan menggunakan metode Eliminasi Gauss Jordan,
+didapat :
+Matriks Eselon Reduksi dari SPL :
+1.0 0.0 -1.0 
+0.0 1.0 2.0 
 
--0.5 0.3333333333333333 0.16666666666666666 
-0.75 -0.6666666666666666 0.41666666666666663 
-0.0 0.3333333333333333 -0.3333333333333333 
-0.0 0.5 -0.5 
--0.14285714285714285 -0.3571428571428571 0.7857142857142857 
-0.42857142857142855 0.07142857142857142 -0.3571428571428571 
+Solusi SPL : 
 
-Dengan menggunakan metode Ekspansi Kofaktor,
-didapat nilai determinan = -17.0
-Dengan menggunakan metode Ekspansi Kofaktor,
-didapat nilai determinan = -17.0
-Dengan menggunakan metode Reduksi Baris,
-didapat nilai determinan = -17.0-0.16666666666666666 0.12962962962962962 0.09259259259259259 
-0.25 -0.027777777777777776 -0.3055555555555555 
-0.16666666666666666 -0.018518518518518517 0.12962962962962962 
+x1 = -1.0
+x2 = 2.0
+Dengan menggunakan metode Matriks Balikan,
+didapat :-1.667 0.667 
+1.333 -0.333 
+
+x1 = -0.9989999999999997
+x2 = 2.0009999999999994
