@@ -9,4 +9,10 @@ Kelompok 44: <br/>
 Asisten: <br/>
 13518070 - Felicia Gillian Tekad Tuerah <br/>
 
+Program dijalankan dengan cara melakukan run di Class Main,
+lalu akan muncul Menu-menu yang ada sesuai dengan permasalahan
+yang diberikan. Ketika suatu menu dipilih, maka akan ada sub-menu
+yang berisi metode-metode berbeda untuk menyelesaikan permasalahan
+yang diberikan.
+
 ---
