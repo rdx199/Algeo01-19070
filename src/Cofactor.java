@@ -6,7 +6,6 @@ import java.text.DecimalFormat;
 public class Cofactor {
     public static double[][] excMatriks(double[][] matriks, int baris, int kolom) {
         double[][] small = new double[matriks.length-1][matriks.length-1];
-        int count = -1;
         for(int i=0; i<matriks.length;i++) {
             for(int j=0; j<matriks.length;j++) {
                 if(i<baris) {
