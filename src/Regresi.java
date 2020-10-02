@@ -24,8 +24,15 @@ public class Regresi {
         } else if (menu1 == 2) {
             matriksinput = Readtxt.read();
             inputn = matriksinput.length;
+            while (true) {
             System.out.print("Masukkan k (peubah x): ");
             inputk = scanner.nextInt();
+                if (inputk + 1 != matriksinput[0].length) {
+                    System.out.println("peubah x harus bernilai sama dengan panjang kolom matriks dikurang 1");
+                } else {
+                    break;
+                }
+            }
             makeRegresi(matriksinput, inputn, inputk);
         } else {
             System.out.println("Masukan salah!");
